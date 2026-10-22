@@ -1,0 +1,15 @@
+[package]
+name = "bureau-of-lost-possessions"
+version = "0.1.1"
+edition = "2024"
+
+[dependencies]
+clap = {version = "4.5", features = ["derive"]}
+thiserror = "2.0.18"
+image = "0.25"
+bevy = "0.15"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
