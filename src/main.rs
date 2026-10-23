@@ -8,6 +8,8 @@ fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
         // Startup systems run once at initialization
+        // Grabing the cursor here is broken on linux. Wait intil window is 
+        // and frames have rendered.
         .add_systems(Startup, (setup_environment, initial_grab_cursor))
         // Update systems run every frame
         .add_systems(Update, (player_look, player_move, cursor_grab_system))
